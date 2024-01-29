@@ -1,3 +1,5 @@
+from http import HTTPStatus
+
 from flask import redirect, render_template, flash, url_for
 
 from . import app
@@ -32,7 +34,7 @@ def index_view():
                 _external=True,
             ),
         ),
-        200,
+        HTTPStatus.OK,
     )
 
 

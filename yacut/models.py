@@ -36,7 +36,7 @@ class URLMap(db.Model):
         if short:
             if URLMap.query.filter_by(short=short).first():
                 raise ShortGenerateError()
-            if len(short) > 16:
+            if len(short) > SHORT_URL_LENGHT:
                 raise URLValidateError("Указано недопустимое имя для короткой ссылки")
             if not re.match(VALID_SHORT_PATTERN, short):
                 raise URLValidateError("Указано недопустимое имя для короткой ссылки")
